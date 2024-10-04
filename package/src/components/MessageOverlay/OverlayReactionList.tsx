@@ -60,9 +60,6 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     position: 'absolute',
   },
-  selectedIcon: {
-    position: 'absolute',
-  },
 });
 
 const reactionData: ReactionData[] = [
@@ -121,6 +118,7 @@ export const ReactionButton = <
       colors: { accent_blue, grey },
       overlay: {
         reactionsList: { reaction, reactionSize },
+        selectedReaction: { selectedReaction },
       },
     },
   } = useTheme();
@@ -218,7 +216,7 @@ export const ReactionButton = <
         style={[index !== numberOfReactions - 1 ? styles.notLastReaction : {}, reaction, iconStyle]}
       >
         <Icon height={reactionSize} pathFill={grey} width={reactionSize} />
-        <Animated.View style={[styles.selectedIcon, selectedStyle]}>
+        <Animated.View style={[selectedReaction, selectedStyle]}>
           <Icon height={reactionSize} pathFill={accent_blue} width={reactionSize} />
         </Animated.View>
       </Animated.View>

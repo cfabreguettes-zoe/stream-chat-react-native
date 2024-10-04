@@ -608,6 +608,7 @@ export type Theme = {
       reactionList: ViewStyle;
       reactionListBorderRadius: number;
       reactionSize: number;
+      selectedReaction: ViewStyle;
     };
   };
   progressControl: {
@@ -1232,6 +1233,7 @@ export const defaultTheme: Theme = {
       reactionList: {},
       reactionListBorderRadius: 24,
       reactionSize: 24,
+      selectedReaction: { position: 'absolute' },
     },
   },
   progressControl: {
